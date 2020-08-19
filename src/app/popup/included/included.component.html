@@ -1,0 +1,543 @@
+<div class="overlay-fixed">
+  <section class="overlay-card card">
+    <header class="top-header">
+      <h2>What's Included?</h2>
+      <i class="fas fa-times" (click)="closeViewAll()"></i>
+    </header>
+
+    <main>
+      <div class="card head">
+        <ul>
+          <li>No service fee & free delivery in 48 hours.</li>
+          <li>Pay after you get your items back.</li>
+          <li>
+            Wash & Fold bag, small size starting AED 25; Press-Only bag small
+            size starting AED 35. Dry cleaning is priced by item.
+          </li>
+        </ul>
+      </div>
+
+      <div id="bags">
+        <header class="sections_header">
+          <h3>Bags</h3>
+          <div>
+            <span
+              (click)="changeBagsTo('small')"
+              [class.active]="size === 'small'"
+              >Small</span
+            >
+            <span (click)="changeBagsTo('Big')" [class.active]="size === 'big'"
+              >Big</span
+            >
+          </div>
+        </header>
+
+        <ul class="bags-items-container">
+          <li class="bag-item">
+            <div class="bag-details">
+              <div class="item__icons">
+                <i class="fas fa-solar-panel"></i>
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <p class="item__title">
+                Wash & Fold
+              </p>
+              <p class="item__description">
+                Washing and tumble dry, 40 degrees Celsius (no ironing).
+              </p>
+            </div>
+            <div class="bag-price">
+              <p>{{ prices[0] }} AED</p>
+              <span>Price per bag</span>
+            </div>
+          </li>
+          <li class="bag-item">
+            <div class="bag-details">
+              <div class="item__icons">
+                <i class="fas fa-icons"></i>
+              </div>
+              <p class="item__title">
+                Iron
+              </p>
+              <p class="item__description">
+                Only valid for tops and bottoms.
+              </p>
+            </div>
+            <div class="bag-price">
+              <p>{{ prices[1] }} AED</p>
+              <span>Price per bag</span>
+            </div>
+          </li>
+          <li class="bag-item">
+            <div class="bag-details">
+              <div class="item__icons">
+                <i class="fas fa-icons"></i>
+                <i class="fas fa-solar-panel"></i>
+              </div>
+              <p class="item__title">
+                Wash & Iron
+              </p>
+              <p class="item__description">
+                Only valid for tops and bottoms.
+              </p>
+            </div>
+            <div class="bag-price">
+              <p>{{ prices[2] }} AED</p>
+              <span>Price per bag</span>
+            </div>
+          </li>
+        </ul>
+        <p class="text-muted text-small">VAT of 5% is not included.</p>
+      </div>
+
+      <div class="pricing">
+        <header class="sections_header">
+          <h3>Pricing</h3>
+          <div>
+            <span
+              (click)="activatedPricing = 'pressing'"
+              [class.active]="activatedPricing === 'pressing'"
+              >Pressing</span
+            >
+            <span
+              (click)="activatedPricing = 'dryclean'"
+              [class.active]="activatedPricing === 'dryclean'"
+              >Dry Clean</span
+            >
+            <span
+              (click)="activatedPricing = 'washiron'"
+              [class.active]="activatedPricing === 'washiron'"
+              >Wash & Iron</span
+            >
+          </div>
+        </header>
+
+        <div class="pricing-items">
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'traditional'"
+          >
+            <div class="item__header" (click)="swapPricingTo('traditional')">
+              <p>Traditional</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'tops'"
+          >
+            <div class="item__header" (click)="swapPricingTo('tops')">
+              <p>Tops</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'bottom'"
+          >
+            <div class="item__header" (click)="swapPricingTo('bottom')">
+              <p>Bottom</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'dress'"
+          >
+            <div class="item__header" (click)="swapPricingTo('dress')">
+              <p>Dress</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'Suits'"
+          >
+            <div class="item__header" (click)="swapPricingTo('Suits')">
+              <p>Suits</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="item-container"
+            [class.selected]="selectedPricing === 'Bedding/Bath'"
+          >
+            <div class="item__header" (click)="swapPricingTo('Bedding/Bath')">
+              <p>Bedding/Bath</p>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <ul>
+              <li>
+                <p>Ghutra</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Kandura</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Shimag</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Summer</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Dishdasha Winter</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Abaya</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Saree</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Hijab/Scarf</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Punjabi</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Winter Bisht</p>
+                <span>5 AED</span>
+              </li>
+              <li>
+                <p>Niqab</p>
+                <span>5 AED</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <section class="question_section">
+        <h2 class="question_header">Frequently Asked Questions</h2>
+
+        <ul class="questions">
+          <li>
+            <div class="question" (click)="changeQuestionTo(1)">
+              <i
+                class="fas"
+                [class.fa-plus]="selectedQuestionNumber !== 1"
+                [class.fa-minus]="selectedQuestionNumber === 1"
+              ></i>
+              <h3>How does it work?</h3>
+            </div>
+            <p [class.active]="selectedQuestionNumber === 1">
+              Our captain will bring free laundry bags for you to fill up. We
+              have two bag sizes for the following: Wash and Fold (Small/Big),
+              Ironing only (Small/Big), Wash and Iron bag (Small/Big). We will
+              ensure that all your items will be cleaned according to what you
+              have requested.
+            </p>
+          </li>
+          <li>
+            <div class="question" (click)="changeQuestionTo(2)">
+              <i
+                class="fas"
+                [class.fa-plus]="selectedQuestionNumber !== 2"
+                [class.fa-minus]="selectedQuestionNumber === 2"
+              ></i>
+              <h3>Do you offer dry cleaning?</h3>
+            </div>
+            <p [class.active]="selectedQuestionNumber === 2">
+              Yes, just tell us which items you need dry cleaned, and we’ll
+              bring them back smelling great and freshly ironed. Dry cleaning is
+              priced per piece and you can see the detailed price list above.
+            </p>
+          </li>
+          <li>
+            <div class="question" (click)="changeQuestionTo(3)">
+              <i
+                class="fas"
+                [class.fa-plus]="selectedQuestionNumber !== 3"
+                [class.fa-minus]="selectedQuestionNumber === 3"
+              ></i>
+              <h3>Do you have a minimum charge?</h3>
+            </div>
+            <p [class.active]="selectedQuestionNumber === 3">
+              No, we do not have any minimum charge.
+            </p>
+          </li>
+          <li>
+            <div class="question" (click)="changeQuestionTo(4)">
+              <i
+                class="fas"
+                [class.fa-plus]="selectedQuestionNumber !== 4"
+                [class.fa-minus]="selectedQuestionNumber === 4"
+              ></i>
+              <h3>Do you have delivery fees?</h3>
+            </div>
+            <p [class.active]="selectedQuestionNumber === 4">
+              Pick-up and delivery is free of charge.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="btn btn-block" (click)="closeViewAll()">Continue</div>
+    </footer>
+  </section>
+</div>

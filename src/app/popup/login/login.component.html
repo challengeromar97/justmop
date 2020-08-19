@@ -1,0 +1,27 @@
+<div class="overlay-fixed">
+  <section class="overlay-card card">
+    <header>
+      <p>Welcome Back Hambozo!</p>
+      <i class="fas fa-times" (click)="closeLogin()"></i>
+    </header>
+
+    <div class="form-group">
+      <label for="tel">Your Mobile Number</label>
+      <div class="tel-container">
+        <input
+          type="tel"
+          class="form-control"
+          id="tel"
+          placeholder="50 123 4567"
+          [(ngModel)]="tel"
+        />
+        <span>+971</span>
+      </div>
+    </div>
+    <footer>
+      <button class="btn" (click)="closeLogin()" [disabled]="!tel">
+        Continue
+      </button>
+    </footer>
+  </section>
+</div>

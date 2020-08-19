@@ -1,0 +1,62 @@
+aside#details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2000;
+
+  .details-container {
+    padding: 0px 40px;
+
+    &.head {
+      padding: 20px 40px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        margin: 0px;
+        font-weight: 700;
+      }
+      i {
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .text-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8ca0b3;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+  }
+
+  .date-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .details-text-muted {
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  .address {
+    font-size: 15px;
+  }
+
+  .calculating {
+    color: var(--main-color);
+    font-weight: 700;
+  }
+
+  .price-notice {
+    color: #8ca0b3 !important;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}

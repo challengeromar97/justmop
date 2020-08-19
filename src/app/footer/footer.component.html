@@ -1,0 +1,51 @@
+<footer id="main__footer">
+  <div class="footer-container">
+    <ul class="main-links">
+      <li *ngFor="let link of links">
+        <a [href]="'https://www.justmop.com/en-AE/' + link.link">
+          {{ link.title }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <div class="bottom">
+      <ul>
+        <li>
+          <a href="#">F.A.Q</a>
+        </li>
+        <li>
+          <a href="#">Terms</a>
+        </li>
+        <li>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">Career</a>
+        </li>
+        <li>
+          <a href="#">Blog</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/justmop">Facebook</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/justmopcom">Twitter</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/justmop/">Instagram</a>
+        </li>
+        <li>
+          <a href="tel:8005667">8005667</a>
+        </li>
+        <li>
+          <a href="mailto:WeCare@justmop.com">WeCare@justmop.com</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

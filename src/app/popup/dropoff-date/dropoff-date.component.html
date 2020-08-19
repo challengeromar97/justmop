@@ -1,0 +1,46 @@
+<div class="overlay-fixed">
+  <section class="overlay-card card">
+    <header>
+      <p>Select Your Drop-off Date & Time</p>
+      <i class="fas fa-times" (click)="closePickUp()"></i>
+    </header>
+
+    <p class="title">Drop-off Date</p>
+
+    <div class="slider-container">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div ngxSlickItem *ngFor="let date of dates" class="slide">
+          <p class="day-string">{{ date.text }}</p>
+          <p class="day-number" [class.active]="selectedDate === date.num"(click)="selectedDate = date.num">{{ date.num }}</p>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+
+    <p class="title">Drop-off Time</p>
+
+    <div class="slider-container">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig2"
+      >
+        <div ngxSlickItem *ngFor="let t of time" class="slide">
+          <div class="time-container">
+            <p class="time" [class.active]="selectedTime === t" (click)="selectedTime = t">{{ t }}</p>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+
+    <div class="hr"></div>
+    <footer>
+      <button class="btn" (click)="closePickUp()">
+        OK
+      </button>
+    </footer>
+  </section>
+</div>

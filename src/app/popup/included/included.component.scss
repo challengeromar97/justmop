@@ -1,0 +1,236 @@
+.overlay-card {
+  position: relative;
+  header.top-header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    h2 {
+      color: #000000de;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0px;
+    }
+
+    i {
+      transition: all 0.3s ease-in-out;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  main {
+    overflow-y: auto;
+    padding: 20px 20px;
+    height: calc(100% - 120px);
+
+    .head {
+      overflow: hidden;
+      margin-bottom: 30px;
+
+      ul {
+        padding-bottom: 15px;
+        li {
+          margin-top: 10px;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
+          padding-left: 15px;
+
+          &::before {
+            content: "\2022";
+            color: #d1d1d1;
+            font-weight: bold;
+            display: inline-block;
+            width: 15px;
+            margin-left: -17px;
+          }
+        }
+      }
+    }
+
+    header.sections_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0px;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 700;
+      }
+      span {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        color: #8ca0b3;
+        font-size: 13px;
+        padding: 1px 10px;
+        margin: 0px 5px;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          background-color: var(--main-color);
+          color: #fff;
+          border: 1px solid #54c9ff4d;
+        }
+      }
+    }
+
+    #bags {
+      .bags-items-container {
+        .bag-item {
+          background-color: rgba(0, 0, 0, 0.08);
+          padding: 20px;
+          margin: 20px 0px;
+          border-radius: 8px;
+          display: flex;
+          justify-content: space-between;
+
+          .bag-details {
+            .item__icons {
+              i {
+                color: #333d47;
+                font-size: 20px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+              }
+            }
+            .item__title {
+              font-size: 15px;
+              font-weight: 700;
+            }
+            .item__description {
+              font-size: 13px;
+              color: #4a4a4a;
+            }
+          }
+          .bag-price {
+            text-align: right;
+            p {
+              color: #8ca0b3;
+              font-size: 14px;
+              font-weight: 700;
+              margin-bottom: 1px;
+            }
+            span {
+              font-size: 12px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .pricing {
+      .pricing-items {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 15px;
+
+        .item-container {
+          &.selected {
+            ul {
+              max-height: 1800px;
+            }
+          }
+          .item__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            p {
+              margin-bottom: 0px;
+              font-size: 14px;
+              font-weight: 700;
+            }
+            i {
+              cursor: pointer;
+            }
+          }
+          ul {
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+
+            li {
+              background-color: rgba(0, 0, 0, 0.08);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 20px;
+
+              p {
+                font-size: 15px;
+              }
+              span {
+                color: #8ca0b3;
+                font-size: 12px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .question_section {
+      .question_header {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 25px 0px 15px;
+        color: #000;
+      }
+
+      .questions {
+        li {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .question {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 15px 0px ;
+
+          i {
+            margin-right: 15px;
+          }
+          h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 0px;
+          }
+        }
+        p {
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.6);
+          overflow: hidden;
+          margin: 0px;
+          max-height: 0px;
+          margin-bottom: 10px;
+
+          &.active {
+            max-height: 1800px;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .btn {
+      background-color: #54caff;
+      width: 95%;
+      margin: auto;
+      color: #fff;
+      border-radius: 15px;
+      margin: 10px;
+    }
+  }
+}

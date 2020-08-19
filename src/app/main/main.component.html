@@ -1,0 +1,156 @@
+<main>
+  <section class="wrapper">
+    <!-- Location Selected -->
+    <p id="current-location">
+      Jumeirah Beach Residence, Dubai
+      <i class="fas fa-angle-down"></i>
+    </p>
+
+    <h3 id="date-time">Date & Time</h3>
+
+    <!-- Process Header -->
+    <div class="process-container">
+      <div class="process selected">
+        <span>1</span>
+        <p>Date & Time</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="process">
+        <span>3</span>
+        <p>Payment</p>
+      </div>
+    </div>
+
+    <div class="process-mob-container">
+      <div class="bg"></div>
+      <div class="process-bg"></div>
+      <span class="first-step"></span>
+      <span class="last-step"></span>
+    </div>
+
+    <div class="section-wrapper">
+
+      <section id="main">
+
+        <div class="top">
+
+          <div class="card head">
+            <header>
+              <h3 class="question-header">What's Included?</h3>
+              <span (click)="showViewAll = true" class="viewall-btn">View All <i class="fas fa-angle-right"></i></span>
+            </header>
+            <ul>
+              <li>No service fee & free delivery in 48 hours.</li>
+              <li>Pay after you get your items back.</li>
+              <li>
+                Wash & Fold bag, small size starting AED 25; Press-Only bag small
+                size starting AED 35. Dry cleaning is priced by item.
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="question-header">
+            When would you like your pick-up and drop-off?
+          </h3>
+
+          <div class="middle container">
+            <div class="row">
+              <div class="pr-2 pl-0 col-6">
+                <div class="card" (click)="pickupDate = true">
+                  <div class="details">
+                    <h6 class="heading">Pick-Up</h6>
+                    <p class="day">Today</p>
+                    <span class="time">4 PM - 5 PM</span>
+                  </div>
+                  <div class="action">
+                    <i class="fas fa-angle-right"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pl-2 pr-0 col-6">
+                <div class="card" (click)="dropOffDate = true">
+                  <div class="details">
+                    <h6 class="heading">Drop-Off</h6>
+                    <p class="day">Mon, Aug 24</p>
+                    <span class="time">4 PM - 5 PM</span>
+                  </div>
+                  <div class="action">
+                    <i class="fas fa-angle-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <h3 class="question-header">Do you have any specific instructions?</h3>
+            <textarea name="instructions" id="instructions" placeholder="Example: Leave outside, wash only, iron only, dry cleaning, etc" class="form-control" rows="5"></textarea>
+          </div>
+
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="bottom">
+          <div class="toBeCalculated" (click)="bookSummary = true">
+            <span>Total</span>
+            <p>To be calculated <i class="fas fa-angle-up"></i></p>
+          </div>
+          <span></span>
+          <div class="btn" (click)="login=true">Next</div>
+        </div>
+      </section>
+
+      <aside id="details">
+
+        <div class="details-container head">
+          <p class="text-header">City</p>
+          <p class="city">Dubai</p>
+        </div>
+        <div class="hr"></div>
+
+        <div class="details-container">
+          <p class="text-header">Date & Time</p>
+          <div class="date-details">
+            <span class="details-text-muted">Pick-up</span>
+            <span>Tue, Aug 15, 4 PM - 5 PM</span>
+          </div>
+          <div class="date-details">
+            <span class="details-text-muted">Drop-off</span>
+            <span>Thu, Aug 20, 4 PM - 5 PM</span>
+          </div>
+        </div>
+        <div class="hr"></div>
+
+        <div class="details-container">
+          <p class="text-header">Address</p>
+          <p class="address">Jumeirah Beach Residence, Dubai</p>
+        </div>
+        <div class="hr"></div>
+
+        <div class="details-container last">
+          <p class="text-header">Price Details</p>
+          <div class="d-flex justify-content-between">
+            <p class="details-text-muted">Total</p>
+            <p class="calculating">To be calculated</p>
+          </div>
+
+          <p class="price-notice">
+            Total price will be calculated and charged after the appointment is
+            completed. Discounts and voucher codes will be applied to final price.
+          </p>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+</main>
+
+<app-included (close)="showViewAll = false" *ngIf="showViewAll === true"></app-included>
+<app-login (close)="login = false" *ngIf="login === true"></app-login>
+<app-pickup-date (close)="pickupDate = false" *ngIf="pickupDate === true"></app-pickup-date>
+<app-dropoff-date (close)="dropOffDate = false" *ngIf="dropOffDate === true"></app-dropoff-date>
+<app-booksummary (close)="bookSummary = false" *ngIf="bookSummary === true"></app-booksummary>
